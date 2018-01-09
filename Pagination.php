@@ -50,20 +50,24 @@ class Pagination{
         $prev = (self::$pages > 1) ? self::$pages -1 : 1; //Previous button function
         $next = (self::$pages < $totalPages) ? self::$pages +1: $totalPages; // Next button function
 
-        echo "<ul class='".$containerClass."'>";
-          echo "<li><a href='".$url."?pg=1'  class='".$pagesClass."'>First</a></li>";
-          echo "<li><a href='".$url."?pg=".$prev."'  class='".$pagesClass."'>Prev</a></li>";
+        $listofpages = "";
+
+        $listofpages .= "<ul class='".$containerClass."'>";
+          $listofpages .= "<li><a href='".$url."?pg=1'  class='".$pagesClass."'>First</a></li>";
+          $listofpages .= "<li><a href='".$url."?pg=".$prev."'  class='".$pagesClass."'>Prev</a></li>";
           for($i=0;$i<$count;$i++){
 
               if(is_integer($i/self::$perPage)){
-                  echo "<li><a href='".$url."?pg=".$pageNum."'  class='".$pagesClass."'>".$pageNum."</a> </li>";
+                $listofpages .= "<li><a href='".$url."?pg=".$pageNum."'  class='".$pagesClass."'>".$pageNum."</a> </li>";
                   $pageNum++;
               }
 
           }
-          echo "<li><a href='".$url."?pg=".$next."'  class='".$pagesClass."'>Next</a></li>";
-          echo "<li><a href='".$url."?pg=".$totalPages."'  class='".$pagesClass."'>Last</a></li>";
-        echo "</ul>";
+          $listofpages .= "<li><a href='".$url."?pg=".$next."'  class='".$pagesClass."'>Next</a></li>";
+          $listofpages .= "<li><a href='".$url."?pg=".$totalPages."'  class='".$pagesClass."'>Last</a></li>";
+        $listofpages .= "</ul>";
+
+        return $listofpages;
     }
 
 
