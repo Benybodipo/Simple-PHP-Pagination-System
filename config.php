@@ -14,4 +14,9 @@ $config = array(
 );
 
 $pagination = new Pagination($config);
-$contents = Pagination::getContent();//Array of objects
+
+$pageslist = Pagination::paginate();
+$contents = Pagination::getContent();
+
+
+?>
