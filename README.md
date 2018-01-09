@@ -1,21 +1,22 @@
 # Simple-PHP-Pagination-System
 This is a simple and easily usable PHP pagination system made on PDO, perfect for small projects.
 
+
 ## Installation & Usage
 
 - Download the repository Simple-PHP-Pagination-System from github to your project folder
 - On config.php, configure the parameters on the config array.
 ```php
   $params = array(
-    'hostName'      =>'',
-    'dbName'        =>'',
-    'userName'      =>'',
-    'password'      =>'',
-    'tableName'     =>'',
-    'recordsPerPage'=> 4,
-    'url'           =>'/myurl',
-    'containerClass'=> 'pagination',
-    'pagesClass'    => 'pageItem'
+    'hostName'      =>'',               // Add your host name
+    'dbName'        =>'',               // Add database name
+    'userName'      =>'',               // Add username
+    'password'      =>'',               // Add password
+    'tableName'     =>'',               // Table where you want to get the content from
+    'recordsPerPage'=> 4,               // Especify how many records you want per page
+    'url'           =>'/myurl',         // Especify the url where you want to display the data
+    'containerClass'=> 'pagination',    // You could ad more than one class separated by space
+    'pagesClass'    => 'pageItem'       // You could ad more than one class separated by space
   );
 
 ```
@@ -45,7 +46,7 @@ This is a simple and easily usable PHP pagination system made on PDO, perfect fo
         <?php endforeach; ?>
       </div>
       
-      <?php $pages; ?>
+      <?php echo $pageslist; ?>
     </div>
   </body>
 </html>
