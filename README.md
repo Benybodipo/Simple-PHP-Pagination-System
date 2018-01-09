@@ -5,13 +5,13 @@ This is a simple and easily usable PHP pagination system made on PDO, perfect fo
 
 - Download the repository Simple-PHP-Pagination-System from github to your project folder
 - On config.php, configure the parameters on the config array.
-```
+```php
   $params = array(
-    'hostName'      =>'localhost',
-    'dbName'        =>'mydatabase',
-    'userName'      =>'myusername',
-    'password'      =>'mypassword',
-    'tableName'     =>'mytable',
+    'hostName'      =>'',
+    'dbName'        =>'',
+    'userName'      =>'',
+    'password'      =>'',
+    'tableName'     =>'',
     'recordsPerPage'=> 4,
     'url'           =>'/myurl',
     'containerClass'=> 'pagination',
@@ -26,7 +26,7 @@ This is a simple and easily usable PHP pagination system made on PDO, perfect fo
 
 ## A Simple Example
 
-```
+```php
 <?php   require("config.php"); ?>
 
 <!DOCTYPE html>
